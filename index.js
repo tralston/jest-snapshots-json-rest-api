@@ -13,7 +13,7 @@ const JSONRestAPISnapshotSerializer = {
   ].some(testFn => testFn(res)),
   print: ({ body }) => {
     const contents = tryParse(body)
-    const schema = sortKeys(toSchema(contents), { deep: true })
+    const schema = sortKeys(contents, { deep: true })
     return JSON.stringify(schema, null, 2)
   }
 }

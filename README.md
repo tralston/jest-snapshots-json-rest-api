@@ -52,8 +52,6 @@ test('get a user', async () => {
     .get('/users/')
 
   expect(response.status).toBe(200)
-  expect(response.body.length).toBeGreaterThanOrEqual(3)
-
   expect(response).toMatchSnapshot()
 })
 ```
@@ -62,34 +60,7 @@ This will generate the corresponding `.snap` file:
 
 ```javascript
 exports[`get a user 1`] = `{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "properties": {
-    "created_at": {
-      "type": "string"
-    },
-    "email": {
-      "type": "string"
-    },
-    "first_name": {
-      "type": "null"
-    },
-    "full_name": {
-      "type": "string"
-    },
-    "id": {
-      "type": "string"
-    },
-    "last_name": {
-      "type": "null"
-    },
-    "status": {
-      "type": "string"
-    },
-    "updated_at": {
-      "type": "string"
-    }
-  },
-  "type": "object"
+  "hello": "world"
 }
 `;
 ```
