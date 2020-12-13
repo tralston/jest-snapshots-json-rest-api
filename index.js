@@ -1,5 +1,6 @@
 'use strict'
 
+const util = require('util');
 const sortKeys = require('sort-keys')
 const toSchema = require('generate-schema').json
 
@@ -14,7 +15,7 @@ const JSONRestAPISnapshotSerializer = {
   print: ({ body }) => {
     const contents = tryParse(body)
     const schema = sortKeys(contents, { deep: true })
-    return JSON.stringify(schema, null, 2)
+    return util.inspect(schema, { depth: null });
   }
 }
 
